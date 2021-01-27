@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zineb <zineb@student.42.fr>                +#+  +:+       +#+        */
+/*   By: zzarrafa <zzarrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 23:29:12 by zineb             #+#    #+#             */
-/*   Updated: 2021/01/21 00:13:21 by zineb            ###   ########.fr       */
+/*   Updated: 2021/01/25 16:23:30 by zzarrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 {
     Contact contact[8];
     int index = 0;
-    string str;
+    char *str;
     
     while(1)
     {
@@ -26,19 +26,26 @@ int main()
         if (strcmp(str, "ADD") == 0)
         {
             if (index > 8)
-                std::cout << "mchi nikmk" << std:endl;
-                continue;
+                {
+                    std::cout << "mchi nikmk" << std::endl;
+                    continue;
+                }
             else
             {
                 index++;
-                addContact(contact,index);
+                contact->addContact(contact, index);
             }
             
         }
-        else if (strcmp(command, "SEARCH") == 0))
+        else if (strcmp(str, "SEARCH") == 0)
         {
-            if
+            contact->search(contact, index);
         }
+        else if (strcmp(str, "EXIT") == 0)
+        {
+            exit(0);
+        }
+        
         
         
     }
